@@ -1,0 +1,8 @@
+@media (max-width: 767.98px) {
+  #containerPrincipale {
+    display: block;
+  }
+  #articleHome {
+    width: 100% I !important;
+  }
+}

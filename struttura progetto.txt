@@ -1,0 +1,61 @@
+Struttura sito web 
+
+-header: 
+   - Home 
+   - Chi siamo 
+   - Ricette preferite (?)
+   -
+
+-barra di ricerca con immagine in background
+
+-ricette preferite :
+-ricette del giorno:
+-blog
+
+Footer
+
+
+-------------------- Home -----
+
+
+
+
+Componente Ricetta Home 
+-Immagine
+-Tasto 'like'
+-Nome
+-Difficoltà
+-Tempo di preparazione
+-Piccola descrizione(?)
+
+---------- Pagina principale delle ricette ----------
+
+header uguale
+
+immagine 
+
+
+
+
+-------------------- Layout site ------------
+
+Header con le 3 voci
+
+Barra con logo e immagine sotto
+
+Ricette - antipasti - primi - secondi - dolci 
+
+
+Ogni sezione dev'essere tutta in linea e dev'essere divisa stile <hr>
+
+
+Colori principali : verde , bianco , verde scuro scuro
+
+
+
+
+react-icon
+react-countup
+
+
+
