@@ -1,32 +1,48 @@
 import "./Section.css";
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 /* import axios from "axios";*/
 import ArticleHome from "./ArticleHome";
 import RealTimeNews from "../RealTimeNews/RealTimeNews";
+import SearchArticle from "../Navbar/SearchArticle";
+import SearchHomeNews from "./SearchHomeNews";
+
 function Section() {
   const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
   const [articles, setArticles] = useState([]);
   const [realTimeNews, setRealTimeNews] = useState([]);
+  /*   const [categories, setCategories] = useState("home");
+   */
+
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.section);
+
+  /* HOME PRINCIPALE  */
 
   useEffect(() => {
+    console.log(categories);
     fetch(
-      `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`
+      `https://api.nytimes.com/svc/topstories/v2/${categories}.json?api-key=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
         /*         arrayArticle.map((article) => console.log(article.title));
          */ /*         console.log(data.results);S
          */
+        console.log(data);
         setArticles(data.results);
       })
       .catch((error) => {
         console.error("Errore nella richiesta API:", error);
       });
-  }, [apiKey]);
+  }, [categories]);
+
+  /* REAL TIME NEWS */
 
   useEffect(() => {
     fetch(
-      `https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=${apiKey}`
+      `https://api.nytimes.com/svc/news/v3/content/nyt/${categories}.json?api-key=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -41,6 +57,8 @@ function Section() {
     <div>
       <div className="container-lg d-flex d-md-block mt-2">
         <div className="row px-2" id="containerPrincipale">
+          <SearchArticle />
+
           <div className="col-12 col-lg-9" id=" articleHome">
             {articles.map((article) => {
               let foto;

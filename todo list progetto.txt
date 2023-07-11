@@ -1,0 +1,37 @@
+nell'app.js devono mettere:
+-navbar
+-Section
+
+la navbar è divisa 
+-bottone ricerca
+-logo
+-categorie 
+
+
+la section la devo dividere tra :
+-home
+-tutte le categorie
+- se cerco qualcosa
+
+
+la section è divisa tra :
+-home ( principale)
+- le categorie ( con i link)
+- le notizie ricercate con la parola chiave.
+
+
+
+-cose da fare :
+aggiungere il router
+fare in modo che col router venga visualizzata solo la categoria
+fare in modo che quando si cerca una parola venga visualizzata solo quella pagina.
+
+
+
+------------------------------------------
+Per creare la sezione delle notizie cercate :
+
+creare il contesto
+poi fare che al bottone del click mettere la funzione : searchGet.
+in questo modo, questa funzione, setta l'array delle notizie di searchArticle.js 
+e ( in teoria ahha ) dovrebbe mostrarmi le notizie cercate .

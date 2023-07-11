@@ -1,14 +1,21 @@
 import "./App.css";
 import React from "react";
-/* import axios from "axios"; */
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./Redux/reducer/rootReducer";
 import Navbar from "./Components/Navbar/Navbar";
 import Section from "./Components/Section/Section";
+
+const store = createStore(rootReducer);
+
 function App() {
   return (
     <div>
-      <Navbar />
-      <hr></hr>
-      <Section />;
+      <Provider store={store}>
+        <Navbar />
+        <hr></hr>
+        <Section />;
+      </Provider>
     </div>
   );
 }
