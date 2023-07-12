@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import ArticleHome from "../Section/ArticleHome";
+// import ArticleHome from "../Section/ArticleHome";
 import SearchHomeNews from "../Section/SearchHomeNews";
 
 const SearchArticle = () => {
@@ -47,7 +47,7 @@ const SearchArticle = () => {
 
       <div className="col">
         {searchNews.map((article) => {
-          let foto = article;
+          //let foto = article;
           console.log(article);
           return (
             <div className="col " key={article._id}>
