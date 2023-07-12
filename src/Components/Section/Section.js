@@ -1,13 +1,13 @@
 import "./Section.css";
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector /* useDispatch */ } from "react-redux";
 
 /* import axios from "axios";*/
 import ArticleHome from "./ArticleHome";
 import RealTimeNews from "../RealTimeNews/RealTimeNews";
 import SearchArticle from "../Navbar/SearchArticle";
-import SearchHomeNews from "./SearchHomeNews";
-
+/* import SearchHomeNews from "./SearchHomeNews";
+ */
 function Section() {
   const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
   const [articles, setArticles] = useState([]);
@@ -15,8 +15,8 @@ function Section() {
   /*   const [categories, setCategories] = useState("home");
    */
 
-  const dispatch = useDispatch();
-  const categories = useSelector((state) => state.section);
+  /*   const dispatch = useDispatch();
+   */ const categories = useSelector((state) => state.section);
 
   /* HOME PRINCIPALE  */
 
@@ -51,7 +51,7 @@ function Section() {
       .catch((error) => {
         console.error("Errore nella richiesta API:", error);
       });
-  }, [apiKey]);
+  }, [categories]);
 
   return (
     <div>

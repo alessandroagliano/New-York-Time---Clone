@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import React /* , { useState, useEffect } */ from "react";
 import { useDispatch } from "react-redux";
 import {
   artsCategories,
@@ -12,25 +12,23 @@ import {
 } from "../../Redux/actions/homeDisplay";
 
 const CategoriesNews = () => {
-  const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
-  const [articles, setArticles] = useState([]);
+  // const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
+  // const [articles, setArticles] = useState([]);
   const dispatch = useDispatch();
-
+  /* 
   useEffect(() => {
     fetch(
       `https://api.nytimes.com/svc/topstories/v2/fashion.json?api-key=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
-        /*         arrayArticle.map((article) => console.log(article.title));
-         */ /*         console.log(data.results);
-         */
+    
         setArticles(data.results);
       })
       .catch((error) => {
         console.error("Errore nella richiesta API:", error);
       });
-  }, [apiKey]);
+  }, [apiKey]); */
 
   return (
     <nav className="navbar  navbar-expand-lg navbar-light bg-light">
