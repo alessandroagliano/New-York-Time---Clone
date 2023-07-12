@@ -108,15 +108,16 @@ const Header = () => {
           </li>
         </div>
         <li className="nav-item">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/02/The_New_York_Times_Logo.svg"
-            alt="logo"
-            width="100%"
-          ></img>
-          <a className="nav-link active" href="#"></a>
+          <a className="nav-link active" href="/img">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/02/The_New_York_Times_Logo.svg"
+              alt="logo"
+              width="100%"
+            ></img>
+          </a>
         </li>
         <li className="nav-item" id="Account">
-          <a className="nav-link active" href="#">
+          <a className="nav-link active" href="/pricing">
             Pricing
           </a>
         </li>
