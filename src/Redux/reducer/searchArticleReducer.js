@@ -17,7 +17,8 @@
 
 const initialState = {
   inputValue: "",
-  valoreDisplay: "none",
+  DisplaySearchArticle: false,
+  DisplaySection: true,
 };
 
 const searchArticleReducer = (state = initialState, action) => {
@@ -30,12 +31,14 @@ const searchArticleReducer = (state = initialState, action) => {
     case "getArticleSearch":
       return {
         ...state,
-        valoreDisplay: action.payload,
+        DisplaySearchArticle: action.payload,
+        DisplaySection: false,
       };
     case "hideDisplaySearch":
       return {
         ...state,
-        valoreDisplay: action.payload,
+        DisplaySearchArticle: action.payload,
+        DisplaySection: true,
       };
     default:
       return state;

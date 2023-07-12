@@ -21,8 +21,8 @@ function Section() {
   /* HOME PRINCIPALE  */
 
   useEffect(() => {
-    console.log(categories);
-    fetch(
+    /*     console.log(categories);
+     */ fetch(
       `https://api.nytimes.com/svc/topstories/v2/${categories}.json?api-key=${apiKey}`
     )
       .then((response) => response.json())
@@ -30,8 +30,8 @@ function Section() {
         /*         arrayArticle.map((article) => console.log(article.title));
          */ /*         console.log(data.results);S
          */
-        console.log(data);
-        setArticles(data.results);
+        /*         console.log(data);
+         */ setArticles(data.results);
       })
       .catch((error) => {
         console.error("Errore nella richiesta API:", error);
@@ -53,12 +53,20 @@ function Section() {
       });
   }, [categories]);
 
+  const DisplaySearchArticle = useSelector(
+    (state) => state.search.DisplaySearchArticle
+  );
+  const DisplaySection = useSelector((state) => state.search.DisplaySection);
+
+  /* const myStyle = {
+    display: valoreDisplay,
+  }; */
+
   return (
     <div>
       <div className="container-lg d-flex d-md-block mt-2">
         <div className="row px-2" id="containerPrincipale">
-          <SearchArticle />
-
+          {DisplaySearchArticle && <SearchArticle />}
           <div className="col-12 col-lg-9" id=" articleHome">
             {articles.map((article) => {
               let foto;
@@ -71,20 +79,20 @@ function Section() {
               return (
                 <div className="col " key={article.id}>
                   <div className="d-flex flex-column h-100">
-                    <ArticleHome
-                      title={article.title}
-                      abstract={article.abstract}
-                      img={foto}
-                      url={article.url}
-                    />
+                    {DisplaySection && (
+                      <ArticleHome
+                        title={article.title}
+                        abstract={article.abstract}
+                        img={foto}
+                        url={article.url}
+                      />
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
           <div className="col-12 col-lg-3" id="realTimeNews">
-            <p className="text-center"> LIVE </p>
-
             {realTimeNews.map((news) => {
               let multimedia;
               if (news.multimedia[2]) {
@@ -92,12 +100,17 @@ function Section() {
               }
 
               return (
-                <RealTimeNews
-                  title={news.title}
-                  abstract={news.abstract}
-                  img={multimedia}
-                  url={news.url}
-                />
+                <div>
+                  {" "}
+                  {DisplaySection && (
+                    <RealTimeNews
+                      title={news.title}
+                      abstract={news.abstract}
+                      img={multimedia}
+                      url={news.url}
+                    />
+                  )}
+                </div>
               );
             })}
           </div>

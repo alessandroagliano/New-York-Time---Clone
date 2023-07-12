@@ -27,5 +27,5 @@ export const scienceCategories = {
 
 export const hideDisplaySearch = {
   type: "hideDisplaySearch",
-  payload: "none",
+  payload: false,
 };

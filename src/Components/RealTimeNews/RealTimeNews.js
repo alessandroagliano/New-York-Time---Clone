@@ -3,6 +3,8 @@ import React from "react";
 const RealTimeNews = (props, img) => {
   return (
     <div className="card row justify-content-center py-4">
+      <p className="text-center"> LIVE </p>
+
       <div className="col">
         {props.img && (
           <img

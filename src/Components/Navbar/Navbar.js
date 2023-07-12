@@ -51,7 +51,7 @@ const InputSearchArticle = () => {
   const inputValue = useSelector((state) => state.search.inputValue);
   const dispatch = useDispatch();
   const [inputText, setInputText] = useState("");
-  const display = "block";
+  const display = true;
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);

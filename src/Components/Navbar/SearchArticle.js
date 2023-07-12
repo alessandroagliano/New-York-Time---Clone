@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 import SearchHomeNews from "../Section/SearchHomeNews";
 
 const SearchArticle = () => {
-  const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
+  const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // chiave API NYT
   const inputValue = useSelector((state) => state.search.inputValue);
-  console.log(inputValue);
-
+  /*   console.log(inputValue);
+   */
   const [searchNews, setSearchNews] = useState([]);
 
   const initialInputValue = ""; // Imposta il valore iniziale del campo di input
@@ -29,30 +29,36 @@ const SearchArticle = () => {
     }
   }, [inputValue, initialInputValue]);
 
-  const valoreDisplay = useSelector((state) => state.search.valoreDisplay);
-  console.log(valoreDisplay);
+  /*  const valoreDisplay = useSelector((state) => state.search.valoreDisplay);
+  console.log(valoreDisplay); */
 
-  const myStyle = {
+  /* 
+  useEffect(() => {
+   
+  }, [inputValue, initialInputValue]); */
+
+  /* const myStyle = {
     display: valoreDisplay,
-  };
+  }; */
 
   return (
     <div>
-      <div className="col" style={myStyle}>
+      <div className="col" /* style={myStyle} */>
         {searchNews.map((article) => {
+          console.log(article.url);
           //let foto = article;
-          const endPointUrlFoto = article.multimedia[0].url;
+          /*  const endPointUrlFoto = article.multimedia[0].url;
           const urlBaseFoto = "https://static01.nyt.com/";
-          const urlCompleto = urlBaseFoto + endPointUrlFoto;
-          console.log(urlCompleto);
-          return (
+          const urlCompleto = urlBaseFoto + endPointUrlFoto; */
+          /*           console.log(urlCompleto);
+           */ return (
             <div className="col " key={article._id}>
               <div className="d-flex flex-column h-100">
                 <SearchHomeNews
                   title={article.headline.main}
                   abstract={article.abstract}
-                  img={urlCompleto}
-                  url={article.url}
+                  /*                   img={urlCompleto}
+                   */ url={article.web_url}
                 />
               </div>
             </div>

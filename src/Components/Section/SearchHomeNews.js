@@ -32,12 +32,12 @@ const SearchHomeNews = (props, img) => {
         </div>
       </div>
       <div className="col col-lg-8">
-        <img
+        {/* <img
           src={props.img}
           className="card-img-top"
           alt="..."
           style={{ width: "100%", height: "100%", maxHeight: "500px" }}
-        />
+        /> */}
       </div>
     </div>
   );
