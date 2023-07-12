@@ -24,3 +24,8 @@ export const booksCategories = {
 export const scienceCategories = {
   type: "science",
 };
+
+export const hideDisplaySearch = {
+  type: "hideDisplaySearch",
+  payload: "none",
+};

@@ -9,39 +9,27 @@ import {
   booksCategories,
   sportsCategories,
   scienceCategories,
+  hideDisplaySearch,
 } from "../../Redux/actions/homeDisplay";
-
 const CategoriesNews = () => {
   // const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
   // const [articles, setArticles] = useState([]);
   const dispatch = useDispatch();
-  /* 
-  useEffect(() => {
-    fetch(
-      `https://api.nytimes.com/svc/topstories/v2/fashion.json?api-key=${apiKey}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-    
-        setArticles(data.results);
-      })
-      .catch((error) => {
-        console.error("Errore nella richiesta API:", error);
-      });
-  }, [apiKey]); */
+  /*   const displayNone = "none";
+   */
 
   return (
     <nav className="navbar  navbar-expand-lg navbar-light bg-light">
       <div className="container-md">
         <ul className="navbar-nav ">
-          <li className="nav-item">
-            <a
-              className="nav-link active "
-              href="#"
-              onClick={() => {
-                dispatch(homeCategories);
-              }}
-            >
+          <li
+            className="nav-item"
+            onClick={() => {
+              dispatch(homeCategories);
+              dispatch(hideDisplaySearch);
+            }}
+          >
+            <a className="nav-link active " href="#">
               Home
             </a>
           </li>
@@ -51,6 +39,7 @@ const CategoriesNews = () => {
               href="#"
               onClick={() => {
                 dispatch(artsCategories);
+                dispatch(hideDisplaySearch);
               }}
             >
               Arts
@@ -62,6 +51,7 @@ const CategoriesNews = () => {
               href="#"
               onClick={() => {
                 dispatch(fashionCategories);
+                dispatch(hideDisplaySearch);
               }}
             >
               Fashion
@@ -73,6 +63,7 @@ const CategoriesNews = () => {
               href="#"
               onClick={() => {
                 dispatch(businessCategories);
+                dispatch(hideDisplaySearch);
               }}
             >
               Business
@@ -84,6 +75,7 @@ const CategoriesNews = () => {
               href="#"
               onClick={() => {
                 dispatch(sportsCategories);
+                dispatch(hideDisplaySearch);
               }}
             >
               Sport
@@ -95,6 +87,7 @@ const CategoriesNews = () => {
               href="#"
               onClick={() => {
                 dispatch(booksCategories);
+                dispatch(hideDisplaySearch);
               }}
             >
               Books
@@ -106,6 +99,7 @@ const CategoriesNews = () => {
               href="#"
               onClick={() => {
                 dispatch(scienceCategories);
+                dispatch(hideDisplaySearch);
               }}
             >
               Science

@@ -51,6 +51,7 @@ const InputSearchArticle = () => {
   const inputValue = useSelector((state) => state.search.inputValue);
   const dispatch = useDispatch();
   const [inputText, setInputText] = useState("");
+  const display = "block";
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
@@ -58,7 +59,9 @@ const InputSearchArticle = () => {
 
   const handleButtonClick = () => {
     dispatch({ type: "searchArticle", payload: inputText });
+    dispatch({ type: "getArticleSearch", payload: display });
   };
+
   /*   const [searchNews, setSearchNews] = useState([]);
    */
   /*  const searchGet = () => {

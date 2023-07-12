@@ -29,33 +29,29 @@ const SearchArticle = () => {
     }
   }, [inputValue, initialInputValue]);
 
+  const valoreDisplay = useSelector((state) => state.search.valoreDisplay);
+  console.log(valoreDisplay);
+
+  const myStyle = {
+    display: valoreDisplay,
+  };
+
   return (
     <div>
-      {/* <div className="input-group">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Cerca..."
-          aria-label="Cerca"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button onClick={searchGet} className="btn btn-primary" type="button">
-          Cerca
-        </button>
-      </div> */}
-
-      <div className="col">
+      <div className="col" style={myStyle}>
         {searchNews.map((article) => {
           //let foto = article;
-          console.log(article);
+          const endPointUrlFoto = article.multimedia[0].url;
+          const urlBaseFoto = "https://static01.nyt.com/";
+          const urlCompleto = urlBaseFoto + endPointUrlFoto;
+          console.log(urlCompleto);
           return (
             <div className="col " key={article._id}>
               <div className="d-flex flex-column h-100">
                 <SearchHomeNews
                   title={article.headline.main}
                   abstract={article.abstract}
-                  //  img={foto}
+                  img={urlCompleto}
                   url={article.url}
                 />
               </div>
