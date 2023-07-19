@@ -1,13 +1,19 @@
 import React from "react";
 import "./SearchHomeNews.css";
 
+/* Creo il componente per la Sezione delle Notizie ricercate */
+
 const SearchHomeNews = (props, img) => {
   return (
     <div className="d-block d-md-flex card row flex-row py-4">
       <div className="col col-lg-4">
         <div className="card-body ">
           <div>
-            <h5 className="card-title">{props.title}</h5>
+            <h5 className="card-title">
+              <a href={props.url} className="">
+                {props.title}{" "}
+              </a>
+            </h5>
             <p
               className="card-text"
               style={{
@@ -32,12 +38,14 @@ const SearchHomeNews = (props, img) => {
         </div>
       </div>
       <div className="col col-lg-8">
-        {/* <img
-          src={props.img}
-          className="card-img-top"
-          alt="..."
-          style={{ width: "100%", height: "100%", maxHeight: "500px" }}
-        /> */}
+        {
+          <img
+            src={props.img}
+            className="card-img-top"
+            alt="..."
+            style={{ width: "100%", height: "100%", maxHeight: "500px" }}
+          />
+        }
       </div>
     </div>
   );

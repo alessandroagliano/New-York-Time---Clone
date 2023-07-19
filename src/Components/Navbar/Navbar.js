@@ -1,9 +1,11 @@
+//Importo i vari Hooks di React e react-redux
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { /* useSelector,  */ useDispatch } from "react-redux";
 
+// Importo i vari Componenti
 import CategoriesNews from "./CategoriesNews";
-import SearchArticle from "./SearchArticle";
-import "./Navbar.css";
+/* import SearchArticle from "./SearchArticle";
+ */ import "./Navbar.css";
 
 const Navbar = () => {
   return (
@@ -11,7 +13,7 @@ const Navbar = () => {
       <div className=" container-lg w-100   justify-content-center">
         <div className="w-100">
           <div className="d-flex">
-            {
+            {/*  {
               <button
                 className="navbar-toggler"
                 type="button"
@@ -24,10 +26,8 @@ const Navbar = () => {
               >
                 <span className="navbar-toggler-icon" />
               </button>
-            }
+            } */}
             <InputSearchArticle />
-            {/*             <SearchArticle />
-             */}{" "}
           </div>
           {/* ----------------------------------------------------------------------------- */}
           <Header />
@@ -46,30 +46,39 @@ export default Navbar;
 /* ----------------------------------------------------------------------------  */
 
 const InputSearchArticle = () => {
-  /*   const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
-   */
-  const inputValue = useSelector((state) => state.search.inputValue);
   const dispatch = useDispatch();
   const [inputText, setInputText] = useState("");
   const display = true;
 
+  /* tramite ' handleInputChange ' cambio lo stato di 'InputText' che servirà
+   nel dispatch per ricercare la news tramite la parola chiave' */
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
 
+  /* Tramite  handleButtonClick' faccio due dispatch per :
+  -definire il valore dell'input della barra
+  -impostare il valore del display di 'searchArticle' in true
+  */
   const handleButtonClick = () => {
     dispatch({ type: "searchArticle", payload: inputText });
     dispatch({ type: "getArticleSearch", payload: display });
   };
 
-  /*   const [searchNews, setSearchNews] = useState([]);
-   */
-  /*  const searchGet = () => {
-    return <SearchArticle />;
-  }; */
+  //Stile Css del campo input per la ricerca delle News
+  const inputStyle = {
+    padding: "12px",
+  };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      // Esegui qui la tua logica o chiama la tua funzione
+      handleButtonClick();
+    }
+  };
+
   return (
     <div>
-      <div className="input-group">
+      <div className="input-group" style={inputStyle}>
         <input
           type="text"
           className="form-control"
@@ -77,6 +86,7 @@ const InputSearchArticle = () => {
           aria-label="Cerca"
           value={inputText}
           onChange={handleInputChange}
+          onKeyDown={handleKeyPress}
         />
         <button
           onClick={handleButtonClick}
@@ -86,12 +96,11 @@ const InputSearchArticle = () => {
           Cerca
         </button>
       </div>
-      <p> Valore dell'input : {inputValue}</p>
     </div>
   );
 };
 
-/* -------- Funzione per  InputSearchArticle --------------- */
+/* ---------------------- HEADER  ------------------------ */
 
 const Header = () => {
   const options = { day: "numeric", month: "long", year: "numeric" };
@@ -107,11 +116,15 @@ const Header = () => {
       <ul className="d-flex w-100" id="header">
         <div>
           <li className="nav-item text-nowrap" id="Date">
-            {weekday + " " + formattedDate}
+            {
+              // Data di oggi
+              weekday + " " + formattedDate
+            }
           </li>
         </div>
         <li className="nav-item">
           <a className="nav-link active" href="/img">
+            {/* Logo del New York Times */}
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/0/02/The_New_York_Times_Logo.svg"
               alt="logo"
@@ -119,11 +132,33 @@ const Header = () => {
             ></img>
           </a>
         </li>
-        <li className="nav-item" id="Account">
-          <a className="nav-link active" href="/pricing">
-            Pricing
-          </a>
-        </li>
+        <div className="dropdown">
+          {/* Dropdown di Account */}
+          <button
+            className=" dropdown-toggle border-0 outline-0 bg-light "
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Account
+          </button>
+          <ul className="dropdown-menu bg-light">
+            <li>
+              <a className="dropdown-item" href="#profilo">
+                Profilo
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#impostazioni">
+                Impostazioni
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item " href="#logout">
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
       </ul>
     </div>
   );

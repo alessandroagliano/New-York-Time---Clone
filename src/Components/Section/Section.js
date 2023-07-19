@@ -4,7 +4,7 @@ import { useSelector /* useDispatch */ } from "react-redux";
 
 /* import axios from "axios";*/
 import ArticleHome from "./ArticleHome";
-import RealTimeNews from "../RealTimeNews/RealTimeNews";
+import RealTimeNews from "./RealTimeNews/RealTimeNews";
 import SearchArticle from "../Navbar/SearchArticle";
 /* import SearchHomeNews from "./SearchHomeNews";
  */
@@ -12,11 +12,7 @@ function Section() {
   const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
   const [articles, setArticles] = useState([]);
   const [realTimeNews, setRealTimeNews] = useState([]);
-  /*   const [categories, setCategories] = useState("home");
-   */
-
-  /*   const dispatch = useDispatch();
-   */ const categories = useSelector((state) => state.section);
+  const categories = useSelector((state) => state.section);
 
   /* HOME PRINCIPALE  */
 
@@ -27,11 +23,7 @@ function Section() {
     )
       .then((response) => response.json())
       .then((data) => {
-        /*         arrayArticle.map((article) => console.log(article.title));
-         */ /*         console.log(data.results);S
-         */
-        /*         console.log(data);
-         */ setArticles(data.results);
+        setArticles(data.results);
       })
       .catch((error) => {
         console.error("Errore nella richiesta API:", error);
@@ -66,6 +58,7 @@ function Section() {
     <div>
       <div className="container-lg d-flex d-md-block mt-2">
         <div className="row px-2" id="containerPrincipale">
+          {/* Se 'displaySearchArticle è true si crea il componente 'SearchArticle */}
           {DisplaySearchArticle && <SearchArticle />}
           <div className="col-12 col-lg-9" id=" articleHome">
             {articles.map((article) => {
@@ -79,6 +72,8 @@ function Section() {
               return (
                 <div className="col " key={article.id}>
                   <div className="d-flex flex-column h-100">
+                    {/* Se 'DisplaySection è true si crea il componente 'ArticleHome */}
+
                     {DisplaySection && (
                       <ArticleHome
                         title={article.title}
@@ -101,7 +96,7 @@ function Section() {
 
               return (
                 <div>
-                  {" "}
+                  {/* Se 'DisplaySection è true si crea il componente 'RealTimeNews */}
                   {DisplaySection && (
                     <RealTimeNews
                       title={news.title}

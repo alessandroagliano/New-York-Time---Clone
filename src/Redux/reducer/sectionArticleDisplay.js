@@ -1,4 +1,4 @@
-const sectionArticleDisplay = (state = "home", action) => {
+const sectionArticleReducer = (state = "home", action) => {
   switch (action.type) {
     case "arts":
       /*       console.log(state);
@@ -37,4 +37,4 @@ const sectionArticleDisplay = (state = "home", action) => {
   }
 };
 
-export default sectionArticleDisplay;
+export default sectionArticleReducer;

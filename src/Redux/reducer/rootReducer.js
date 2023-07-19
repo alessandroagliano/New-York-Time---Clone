@@ -1,10 +1,12 @@
-import sectionArticleDisplay from "./sectionArticleDisplay";
+/* Definisco il rootReducer principale  */
+
+import sectionArticleReducer from "./sectionArticleDisplay";
 import searchArticleReducer from "./searchArticleReducer";
 
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  section: sectionArticleDisplay,
+  section: sectionArticleReducer,
   search: searchArticleReducer,
 });
 

@@ -1,20 +1,9 @@
-/* const searchArticle = (state = "", action) => {
-  switch (action.type) {
-    case "search":
-      console.log(state);
+/* Definisco il reducer per gli articoli ricercati 
+tramite la barra di ricerca */
 
-      return "arts";
-    case "home":
-      console.log(state);
-
-      return "home";
-
-    default:
-      return state;
-  }
-};
- */
-
+/* Per lo stato iniziale definisco il display di section in 'true
+e il display di SeartArticle in false.
+L'il valore dell'input della barra di ricerca in una stringa vuota */
 const initialState = {
   inputValue: "",
   DisplaySearchArticle: false,

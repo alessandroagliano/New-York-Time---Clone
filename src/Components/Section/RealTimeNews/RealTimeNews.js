@@ -7,18 +7,25 @@ const RealTimeNews = (props, img) => {
 
       <div className="col">
         {props.img && (
-          <img
-            src={props.img}
-            className="card-img-top"
-            alt="..."
-            style={{ width: "100%", height: "100%", maxHeight: "500px" }}
-          />
+          <a href={props.url} className="">
+            <img
+              src={props.img}
+              className="card-img-top"
+              alt="..."
+              style={{ width: "100%", height: "100%", maxHeight: "500px" }}
+            />{" "}
+          </a>
         )}
       </div>
 
       <div className="col">
         <div className="card-body ">
-          <h5 className="card-title">{props.title}</h5>
+          <h5 className="card-title">
+            {" "}
+            <a href={props.url} className="">
+              {props.title}{" "}
+            </a>
+          </h5>
           <p
             className="card-text"
             style={{

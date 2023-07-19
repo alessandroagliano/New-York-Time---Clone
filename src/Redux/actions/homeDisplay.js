@@ -1,3 +1,6 @@
+/* Queste sono tutte le actions che utilizzo nel reducer: 'sectionArticleReducer.
+Servono per cambiare la categoria degli articoli visualizzati nella Section. */
+
 export const homeCategories = {
   type: "home",
 };
