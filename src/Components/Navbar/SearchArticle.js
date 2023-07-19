@@ -16,7 +16,7 @@ import SearchHomeNews from "../Section/SearchHomeNews";
  
   */
 const apikey = process.env.REACT_APP_API_KEY; // Leggi la variabile di ambiente
-
+console.log(apikey);
 const SearchArticle = () => {
   const inputValue = useSelector((state) => state.search.inputValue);
 
