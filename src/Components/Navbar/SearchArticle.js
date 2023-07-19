@@ -16,9 +16,9 @@ import SearchHomeNews from "../Section/SearchHomeNews";
  
   */
 const apikey = process.env.REACT_APP_API_KEY; // Leggi la variabile di ambiente
-const headers = {
+/* const headers = {
   Authorization: `Bearer ${apikey}`,
-};
+}; */
 console.log(apikey);
 const SearchArticle = () => {
   const inputValue = useSelector((state) => state.search.inputValue);
@@ -30,8 +30,7 @@ const SearchArticle = () => {
     () => {
       if (inputValue !== initialInputValue) {
         fetch(
-          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${inputValue}&api-key=${apikey}`,
-          { headers }
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${inputValue}&api-key=${apikey}`
         )
           .then((response) => response.json())
           .then((data) => {
