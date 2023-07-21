@@ -27,7 +27,7 @@ E' stato strutturato usando React e gestendo lo state tramite Redux.
 - Bootstrap
 - Javascript
 - React
-- Reduc
+- Redux
 - Visual Studio Core ( editor )
 - GitHub
 
