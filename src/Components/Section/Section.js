@@ -8,8 +8,10 @@ import RealTimeNews from "./RealTimeNews/RealTimeNews";
 import SearchArticle from "../Navbar/SearchArticle";
 /* import SearchHomeNews from "./SearchHomeNews";
  */
+
+const apiKey = process.env.REACT_APP_API_KEY; // Variabile di ambiente, chiave personale Api
+
 function Section() {
-  const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
   const [articles, setArticles] = useState([]);
   const [realTimeNews, setRealTimeNews] = useState([]);
   const categories = useSelector((state) => state.section);

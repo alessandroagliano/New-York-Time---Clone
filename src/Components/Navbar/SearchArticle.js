@@ -15,11 +15,8 @@ import SearchHomeNews from "../Section/SearchHomeNews";
   il componente 'SearchHomeNews'
  
   */
-const apikey = process.env.REACT_APP_API_KEY; // Leggi la variabile di ambiente
-/* const headers = {
-  Authorization: `Bearer ${apikey}`,
-}; */
-console.log(apikey);
+const apiKey = process.env.REACT_APP_API_KEY; // Variabile di ambiente, chiave personale Api
+
 const SearchArticle = () => {
   const inputValue = useSelector((state) => state.search.inputValue);
 
@@ -30,7 +27,7 @@ const SearchArticle = () => {
     () => {
       if (inputValue !== initialInputValue) {
         fetch(
-          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${inputValue}&api-key=${apikey}`
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${inputValue}&api-key=${apiKey}`
         )
           .then((response) => response.json())
           .then((data) => {
@@ -75,7 +72,9 @@ const SearchArticle = () => {
             <div className="d-flex flex-column h-100"></div>
           </div>
         ) : (
+          // Qui il ternary operator
           searchNews.map((article) => {
+            //Per ricevere l'url corretto bisogna aggiungere il prefisso 'urlBaseFoto'
             const endPointUrlFoto = article.multimedia[0]?.url;
             const urlBaseFoto = "https://static01.nyt.com/";
             const urlCompleto = urlBaseFoto + endPointUrlFoto;

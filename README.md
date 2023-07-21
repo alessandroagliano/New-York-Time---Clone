@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# New York Times - Homepage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Copia della Home page del sito ufficiale del New York Times
 
-## Available Scripts
+> Demo dal vivo [_qui_](https://newyorktimesclone.netlify.app/). <!-- Se hai il progetto ospitato da qualche parte, includi il link qui. -->
 
-In the project directory, you can run:
+## Sommario
 
-### `npm start`
+- [Informazioni generali](#informazioni-generali)
+- [Tecnologie utilizzate](#tecnologie-utilizzate)
+- [Screenshot](#screenshot)
+- [Utilizzo](#utilizzo)
+- [Stato progetto](#stato-progetto)
+- [Ringraziamenti](#riconoscimenti)
+- [Contatto](#contatto)
+- [Licenza](#licenza)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Informazioni generali
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Questo sito è stato creato prendendo spunto dal sito ufficiale del New York Times.
+E' stato strutturato usando React e gestendo lo state tramite Redux.
 
-### `npm test`
+## Tecnologie utilizzate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Html
+- Css
+- Bootstrap
+- Javascript
+- React
+- Reduc
+- Visual Studio Core ( editor )
+- GitHub
 
-### `npm run build`
+## Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="./img/presentazione/HomePage-desktop.PNG">
+Screenshoot della’applicazione al suo valore iniziale
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Utilizzo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Essendo un clone del sito ufficiale del New York Times , questo sito permette
+  di tenersi aggiornato sulle notizie di tutto il mondo grazie al servizio API del [New York Times](https://developer.nytimes.com/).
+- Offre anche la possibilità di ricercare le notizie nel loro Database tramite parole chiave.
 
-### `npm run eject`
+## Stato del progetto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Il progetto è completato.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Ringraziamenti
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Questo progetto è stato svolto per Start2Impact per valutare le mie skills con React.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contatto
 
-## Learn More
+Creato da [Alessandro Aglianò](https://alessandroagliano.github.io/)- non esitare a contattarmi!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Licenza -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Questo progetto è open source e disponibile sotto la Mit License.
