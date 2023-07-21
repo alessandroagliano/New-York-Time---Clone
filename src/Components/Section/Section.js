@@ -1,13 +1,10 @@
 import "./Section.css";
 import React, { useState, useEffect } from "react";
-import { useSelector /* useDispatch */ } from "react-redux";
+import { useSelector } from "react-redux";
 
-/* import axios from "axios";*/
 import ArticleHome from "./ArticleHome";
 import RealTimeNews from "./RealTimeNews/RealTimeNews";
 import SearchArticle from "../Navbar/SearchArticle";
-/* import SearchHomeNews from "./SearchHomeNews";
- */
 
 const apiKey = process.env.REACT_APP_API_KEY; // Variabile di ambiente, chiave personale Api
 
@@ -19,8 +16,7 @@ function Section() {
   /* HOME PRINCIPALE  */
 
   useEffect(() => {
-    /*     console.log(categories);
-     */ fetch(
+    fetch(
       `https://api.nytimes.com/svc/topstories/v2/${categories}.json?api-key=${apiKey}`
     )
       .then((response) => response.json())

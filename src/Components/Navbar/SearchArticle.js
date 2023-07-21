@@ -18,13 +18,14 @@ import SearchHomeNews from "../Section/SearchHomeNews";
 const apiKey = process.env.REACT_APP_API_KEY; // Variabile di ambiente, chiave personale Api
 
 const SearchArticle = () => {
-  const inputValue = useSelector((state) => state.search.inputValue);
+  const inputValue = useSelector((state) => state.search.inputValue); // Valore input della ricerca
 
-  const [searchNews, setSearchNews] = useState([]);
-  const initialInputValue = "";
+  const [searchNews, setSearchNews] = useState([]); // Array delle notizie ricevute
+  const initialInputValue = ""; // Valore iniziale input
 
   useEffect(
     () => {
+      // La ricerca viene effettuata quando il valore dell'input è diverso da una stringa vuota
       if (inputValue !== initialInputValue) {
         fetch(
           `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${inputValue}&api-key=${apiKey}`
@@ -47,22 +48,12 @@ const SearchArticle = () => {
     [inputValue, initialInputValue]
   );
 
-  /*  const valoreDisplay = useSelector((state) => state.search.valoreDisplay);
-  console.log(valoreDisplay); */
-
-  /* 
-  useEffect(() => {
-   
-  }, [inputValue, initialInputValue]); */
-
-  /* const myStyle = {
-    display: valoreDisplay,
-  }; */
-
   /* Ho messo un if/else( ternary operator) nel caso
   -la ricerca non da risultati : renderizza l'h2 dicendo che non ha trovato risultati
+
   -Se la ricerca produce risultati : fa un .map() del risultati e ci crea un
   'SearchHomeNews' componente per ogni elemento dell'array 'searchNews' */
+
   return (
     <div>
       <div className="col">

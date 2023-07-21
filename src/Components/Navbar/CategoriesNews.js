@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React /* , { useState, useEffect } */ from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import {
   artsCategories,
@@ -12,16 +12,15 @@ import {
   hideDisplaySearch,
 } from "../../Redux/actions/homeDisplay";
 const CategoriesNews = () => {
-  // const apiKey = "0HfJ47DGfZOZ5uTIt6k1K6b7PL3hMty9"; // Sostituisci con la tua chiave API
-  // const [articles, setArticles] = useState([]);
   const dispatch = useDispatch();
-  /*   const displayNone = "none";
-   */
 
   return (
     <nav className="navbar  navbar-expand-lg navbar-light bg-light">
       <div className="container-md">
         <ul className="navbar-nav ">
+          {/* Per ogni <li> , al click, faccio il dispatch per ricercare
+          le notizie in base alla categorie e un altro dispatch
+          per visualizzare il componente 'SearchArticle' */}
           <li
             className="nav-item"
             onClick={() => {

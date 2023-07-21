@@ -13,27 +13,11 @@ const Navbar = () => {
       <div className=" container-lg w-100   justify-content-center">
         <div className="w-100">
           <div className="d-flex">
-            {/*  {
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                onClick={SearchArticle}
-              >
-                <span className="navbar-toggler-icon" />
-              </button>
-            } */}
             <InputSearchArticle />
           </div>
-          {/* ----------------------------------------------------------------------------- */}
           <Header />
         </div>
       </div>
-      {/* ------------------------------------------------------- */}
       <div className=" container-lg collapse navbar-collapse  " id="navbarNav">
         <CategoriesNews />
       </div>
